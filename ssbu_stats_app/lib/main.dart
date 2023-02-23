@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
   runApp(MyApp(key: UniqueKey()));
 }
 
@@ -45,17 +45,22 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration:
+                  BoxDecoration(color: Color.fromARGB(255, 20, 93, 153)),
+              child: Text('SB Stats'),
+            ),
+            ListTile(title: const Text("Characters"), onTap: () {}),
+            ListTile(title: const Text("Stages"), onTap: () {}),
+          ],
+        ),
+      ),
       body: Row(
         children: [
-          Container(
-            width: 200,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Menu bar'),
-              ],
-            ),
-          ),
           Expanded(
             child: Container(
               color: Colors.grey[200],
@@ -81,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future<void> _login() async {
-    try {
+/*    try {
       final userCredential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text,
@@ -98,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
-    }
+    }*/
   }
 
   @override
