@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
   runApp(MyApp(key: UniqueKey()));
 }
 
@@ -84,10 +84,10 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+/*
   Future<void> _login() async {
     try {
-      final userCredential =
+      /final userCredential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
       }
     }
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Text('Login'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    _login();
+                    //_login();
                   }
                 },
               ),
