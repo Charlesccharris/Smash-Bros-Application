@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-//import 'package:firebase_core/firebase_core.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp(key: UniqueKey()));
 }
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(
+      home: const HomePage(
         title: '',
       ),
     );
@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: Container(
               color: Colors.grey[200],
-              child: Center(
+              child: const Center(
                 child: Text('Main content'),
               ),
             ),
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future<void> _login() async {
-/*    try {
+    try {
       final userCredential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text,
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
       // Login successful, navigate to home screen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -103,17 +103,17 @@ class _LoginPageState extends State<LoginPage> {
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
-    }*/
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Please enter your email';
@@ -129,10 +129,10 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
@@ -141,9 +141,9 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
-                child: Text('Login'),
+                child: const Text('Login'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _login();
