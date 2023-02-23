@@ -56,6 +56,7 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(title: const Text("Characters"), onTap: () {}),
             ListTile(title: const Text("Stages"), onTap: () {}),
+            ListTile(title: const Text("Extra"), onTap: () {}),
           ],
         ),
       ),
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
 /*
   Future<void> _login() async {
     try {
-      /final userCredential =
+      final userCredential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,

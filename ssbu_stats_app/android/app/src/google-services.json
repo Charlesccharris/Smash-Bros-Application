@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "550919884284",
+    "project_id": "smash-app-780c7",
+    "storage_bucket": "smash-app-780c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550919884284:android:36d343d0da16a66170f679",
+        "android_client_info": {
+          "package_name": "com.affergot.ssbu_stats_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550919884284-4pijhosj29vn0ea13eqq69u4mqkh0j06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlJhoWlMQ_uYs-BnTKAwDbg3N_tWXZ_4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550919884284-4pijhosj29vn0ea13eqq69u4mqkh0j06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
